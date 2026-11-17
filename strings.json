@@ -1,0 +1,54 @@
+{
+	"en": {
+		"mod_name": "Industry Pollution Display",
+		"mod_desc": "Adds a card with the current noise and pollution to the windows of industries, depots and maintenance buildings."
+	},
+	"ja": {
+		"mod_name": "産業パネルに公害表示",
+		"mod_desc": "産業・車庫・メンテナンス用建物のウィンドウに、現在の騒音と公害を示すカードを追加します。"
+	},
+	"de": {
+		"mod_name": "Verschmutzungsanzeige für Industrien",
+		"mod_desc": "Fügt den Fenstern von Industrien, Depots und Wartungsgebäuden eine Karte mit dem aktuellen Lärm und der aktuellen Verschmutzung hinzu."
+	},
+	"es": {
+		"mod_name": "Polución de las industrias",
+		"mod_desc": "Añade una tarjeta con el ruido y la polución actuales a las ventanas de industrias, depósitos y edificios de mantenimiento."
+	},
+	"fr": {
+		"mod_name": "Pollution des industries",
+		"mod_desc": "Ajoute une carte avec le bruit et la pollution actuels aux fenêtres des industries, des dépôts et des bâtiments de maintenance."
+	},
+	"it": {
+		"mod_name": "Inquinamento delle industrie",
+		"mod_desc": "Aggiunge una scheda con il rumore e l'inquinamento attuali alle finestre di industrie, depositi ed edifici di manutenzione."
+	},
+	"ko": {
+		"mod_name": "산업 공해 표시",
+		"mod_desc": "산업, 차고지, 유지보수용 건물의 창에 현재 소음과 공해를 보여 주는 카드를 추가합니다."
+	},
+	"nl": {
+		"mod_name": "Vervuiling van industriebedrijven",
+		"mod_desc": "Voegt aan de vensters van industriebedrijven, depots en onderhoudswerkplaatsen een kaart toe met de huidige geluidsoverlast en vervuiling."
+	},
+	"pl": {
+		"mod_name": "Zanieczyszczenia zakładów przemysłowych",
+		"mod_desc": "Dodaje do okien zakładów przemysłowych, baz i warsztatów konserwacyjnych kartę z bieżącym hałasem i zanieczyszczeniem."
+	},
+	"pt_BR": {
+		"mod_name": "Poluição das Indústrias",
+		"mod_desc": "Adiciona um cartão com o barulho e a poluição atuais às janelas de indústrias, pátios e edifícios de manutenção."
+	},
+	"ru": {
+		"mod_name": "Загрязнение от предприятий",
+		"mod_desc": "Добавляет в окна предприятий, депо и зданий техобслуживания карточку с текущим шумом и загрязнением."
+	},
+	"zh_CN": {
+		"mod_name": "产业污染显示",
+		"mod_desc": "在产业、车库和维护设施的窗口中添加一张显示当前噪音和污染的卡片。"
+	},
+	"zh_TW": {
+		"mod_name": "產業汙染顯示",
+		"mod_desc": "在產業、倉庫和維修設施的視窗中加入一張顯示目前噪音和汙染的卡片。"
+	}
+}
