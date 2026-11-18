@@ -768,6 +768,17 @@ test("README: images exist and are 1920x1080 PNGs, cover = English one", functio
 	assert(readFile("docs/images/cover_ja.png") ~= readFile("docs/images/cover_en.png"), "Japanese screenshot is a different image")
 end)
 
+test("README links the mod.io page in both languages", function()
+	local md = readFile("README.md")
+	local url = "https://mod.io/g/transportfever3/m/industry-pollution-display"
+	-- each language section needs its own link; extra links (badges) are fine
+	local split = assert(md:find("\n## 日本語", 1, true), "Japanese section")
+	assert(md:sub(1, split):find(url, 1, true), "English section link")
+	assert(md:sub(split):find(url, 1, true), "Japanese section link")
+	assert(not md:find("link follows after", 1, true), "English placeholder left")
+	assert(not md:find("リンクを載せます", 1, true), "Japanese placeholder left")
+end)
+
 test(".gitignore: build output and Python caches", function()
 	local gi = readFile(".gitignore")
 	assert(gi:find("\ndist/\n", 1, true) or gi:find("^dist/\n"), "dist/")
