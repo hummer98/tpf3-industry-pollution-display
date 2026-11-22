@@ -7,7 +7,7 @@
 - `mod.json` の `revision`（整数）は版から決まる: `MAJOR * 10000 + MINOR * 100 + PATCH`（1.0.0 → 10000、1.2.3 → 10203）。`tools/release.py` が `VERSION` と一緒に書き換える。版の順に増えるので、`tools/stage.py` の「アップロード済みより大きい revision」の確認と合う。
 - `tests/test_release.py` が、次のときに落ちる。
   - `mod.json` の revision が `VERSION` から決まる値と違う。
-  - `CHANGELOG.md` の一番新しい版の節が `VERSION` と違う（手で版を上げた）。最初の release の前は版の節が無いので、比べない。
+  - `CHANGELOG.md` の一番新しい版の節が `VERSION` と違う（手で版を上げた）。版の節が1つも無いときは比べない（この MOD は最初から `[1.0.0]` の節がある）。
   - `CHANGELOG.md` に `## [Unreleased]` の節が無い。
 - `VERSION` は zip に入らない。この MOD は平常時にログを出さない（読み取りに失敗したときだけ出す）ので、ゲームの中で版を出す所は無い。ゲームに届くのは `mod.json` の revision だけ。
 
@@ -15,9 +15,9 @@
 
 | 上げる所 | いつ |
 |---|---|
-| PATCH | 不具合の修正、文の直し。動き方は変えない |
-| MINOR | 機能や MOD の設定の追加、動き方の調整 |
-| MAJOR | 既存の路線やセーブへの効き方が大きく変わる、MOD の設定を消す・意味を変えるとき |
+| PATCH | 不具合の修正、文の直し。表示の中身は変えない |
+| MINOR | 表示の追加（新しいウィンドウ、新しい値）、表示の調整 |
+| MAJOR | 表示の意味が変わる、表示を消すとき |
 
 ## CHANGELOG.md
 
@@ -43,7 +43,7 @@ python3 tools/release.py --github-only        # HEAD のタグの push と GitHu
 
 すること:
 
-1. 確認: 作業ツリー、枝、新しい版（今の版以上で、どのタグ `v*` よりも上。今の版と同じ番号は、そのタグが無いときだけ = 最初の release）、`## [Unreleased]` に中身がある。
+1. 確認: 作業ツリー、枝、新しい版（今の版以上で、どのタグ `v*` よりも上。今の版と同じ番号は、そのタグも CHANGELOG の節も無いときだけ。この MOD は `[1.0.0]` の節があるので、1.0.0 をもう一度出すことはできない）、`## [Unreleased]` に中身がある。
 2. `VERSION`・`mod.json` の revision・`CHANGELOG.md` を書き、`tools/package.py` と同じ確認（JSON、表紙、Lua のテスト、道具のテスト）をする。落ちたら書いたファイルを全部戻して止まる。
 3. コミット `Release vX.Y.Z` と、注釈付きタグ `vX.Y.Z`。
 4. `dist/hummer_industry_pollution_display-vX.Y.Z.zip`（`tools/package.py` と同じ中身。直下にファイル）。
