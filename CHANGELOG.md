@@ -7,6 +7,12 @@ mod's `revision` in `mod.json` is MAJOR * 10000 + MINOR * 100 + PATCH.
 
 ## [Unreleased]
 
+### Changed
+- The mod's name in the game's mod list and on mod.io is now English only:
+  "Industry Pollution Display" instead of the English and Japanese names
+  together. The summary and description keep their Japanese and other
+  languages, and the in-game texts are unchanged.
+
 ## [1.0.0] - 2026-11-18
 
 ### Added

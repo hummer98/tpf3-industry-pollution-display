@@ -71,7 +71,7 @@ The code is plain Lua (`content/gui/`):
 | `ipd.script.lua` | The two plugin recipes: reads the emitters and builds the card |
 | `ipd.res.lua` | Registers the industry window plugin |
 | `ipd_maintenance.res.lua` | Registers the depot / maintenance building window plugin |
-| `_metadata/modinfo.json` | Name, summary and description for the game's mod list and the in-game mod.io upload. The game shows one text for all languages, so the name is "English / 日本語" and the description has a section per language |
+| `_metadata/modinfo.json` | Name, summary and description for the game's mod list and the in-game mod.io upload. The game shows one text for all languages, so the name is in English and the description has a section per language |
 | `_metadata/0.png` | Cover image (required by the in-game uploader, also shown in the mod list) |
 | `docs/modio_description.md` | The same description for the mod.io web page |
 | `docs/images/` | README screenshots (English one = the cover); not packed into the release zip |

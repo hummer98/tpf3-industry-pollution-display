@@ -620,7 +620,11 @@ test("_metadata/modinfo.json: readable name, summary, author, tag", function()
 	for k in pairs(info) do keys[#keys + 1] = k end
 	table.sort(keys)
 	eq(table.concat(keys, ","), "authors,description,name,summary,tags,url")
-	eq(info.name, "Industry Pollution Display / 産業パネルに公害表示")
+	-- English only (user, 2026-11-22: no Japanese in mod titles); the
+	-- translations stay in strings.json and the description
+	eq(info.name, "Industry Pollution Display")
+	assert(not info.name:find("[\128-\255]"), "name must be ASCII / English only")
+	eq(info.name, readJson("strings.json").en.mod_name, "name = the English mod_name")
 	-- mod.io limits, counted in characters (UTF-8 lead bytes)
 	local function chars(str) return select(2, str:gsub("[^\128-\191]", "")) end
 	assert(chars(info.name) <= 50, "name too long for mod.io")
