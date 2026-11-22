@@ -1,6 +1,6 @@
 {
 	"modId": "hummer_industry_pollution_display",
-	"revision": 1,
+	"revision": 10000,
 	"severityAdd": "None",
 	"severityRemove": "None",
 	"visible": true,

@@ -86,9 +86,21 @@ luajit tests/run.lua
 `dist/hummer_industry_pollution_display_1.zip` with only the files the game
 needs (no `.git`, tests or tools). LICENSE stays out too: the game's mod
 validation rejects files without an allowed extension, so the mod
-description states the licence and links here instead.
+description states the licence and links here instead. It also stops when
+the name or summary in `_metadata/modinfo.json` is longer than mod.io allows
+(50 and 250 characters).
 
-To publish an update, raise `revision` in `mod.json`, commit, then run
+### Versions and releases
+
+The version is in `VERSION` (`MAJOR.MINOR.PATCH`); `mod.json`'s `revision`
+is MAJOR * 10000 + MINOR * 100 + PATCH. Changes are listed in
+[CHANGELOG.md](CHANGELOG.md) and each version has a tag `vX.Y.Z` and a
+GitHub release with the zip. `python3 tools/release.py patch` (or `minor`,
+`major`, `X.Y.Z`; `--dry-run` to try) writes the version, the revision and
+the changelog section, runs the checks, commits, tags and creates the
+GitHub release.
+
+To publish an update on mod.io, cut a release, then run
 `python3 tools/stage.py`. It runs the same checks, refuses uncommitted
 changes or an unraised revision, and rebuilds the game's staging copy
 (`local/staging_area/hummer_industry_pollution_display_1`) while keeping the
